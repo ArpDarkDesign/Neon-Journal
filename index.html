@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Neon Journal</title>
+
+  <meta
+    name="description"
+    content="A futuristic AI-inspired personal knowledge dashboard for notes, reflections, ideas, and memory tracking."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syncopate:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="theme-dark landing-page">
+  <div class="loader" id="pageLoader" aria-hidden="true">
+    <div class="loader__core"></div>
+    <p class="loader__text">Booting Knowledge System...</p>
+  </div>
+
+  <div class="page-shell">
+    <div class="particles" id="particles"></div>
+
+    <div class="ambient ambient--left"></div>
+    <div class="ambient ambient--right"></div>
+
+    <!-- HEADER -->
+
+    <header class="topbar glass-panel">
+      <a class="brand" href="index.html">
+        <span class="brand__mark"></span>
+        <span class="brand__text">Neon Journal</span>
+      </a>
+
+      <nav class="topbar__nav">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#experience">Experience</a>
+      </nav>
+
+      <div class="topbar__actions">
+        <button
+          class="icon-button theme-toggle"
+          type="button"
+          data-theme-toggle
+          aria-label="Toggle theme"
+        >
+          <span class="theme-toggle__orb"></span>
+        </button>
+
+        <a class="button button--ghost" href="dashboard.html">
+          Open Dashboard
+        </a>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+
+    <main>
+
+      <!-- HERO -->
+
+      <section class="hero section" id="hero">
+        <div class="hero__content">
+
+          <p class="eyebrow reveal">
+            AI-Powered Personal Knowledge Dashboard
+          </p>
+
+          <h1 class="hero__title reveal">
+            Your second brain,
+            <span class="hero__title-glow">
+              rendered in neon.
+            </span>
+          </h1>
+
+          <p class="hero__copy reveal">
+            Capture ideas, memories, reflections, goals, and daily thoughts
+            inside a futuristic knowledge management system designed for
+            instant recall and personal growth.
+          </p>
+
+          <div class="typing-line reveal">
+            <span class="typing-line__label">System stream:</span>
+
+            <span
+              class="typing-line__text"
+              id="landingTyping"
+            ></span>
+          </div>
+
+          <div class="hero__actions reveal">
+            <a class="button" href="dashboard.html">
+              Launch Dashboard
+            </a>
+
+            <a class="button button--ghost" href="#features">
+              Explore Features
+            </a>
+          </div>
+        </div>
+
+        <!-- FLOATING CARDS -->
+
+        <div class="hero__visual reveal">
+
+          <div class="floating-card floating-card--primary">
+            <span class="floating-card__tag">
+              Idea / 07
+            </span>
+
+            <h3>Startup Concept Archive</h3>
+
+            <p>
+              Voice-powered task management system captured during a late-night
+              product brainstorming session.
+            </p>
+          </div>
+
+          <div class="floating-card floating-card--secondary">
+            <span class="floating-card__tag">
+              Reflection / 12
+            </span>
+
+            <h3>Future Goals</h3>
+
+            <p>
+              Long-term planning notes, personal objectives, and career
+              milestones organized for quick recall.
+            </p>
+          </div>
+
+          <div class="orbit-ring orbit-ring--one"></div>
+          <div class="orbit-ring orbit-ring--two"></div>
+
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+
+      <section class="section section--feature" id="features">
+
+        <div class="section-heading reveal">
+          <p class="eyebrow">Features</p>
+
+          <h2>
+            Built like a digital observatory for your thoughts
+          </h2>
+        </div>
+
+        <div class="feature-grid">
+
+          <article class="glass-card reveal tilt-card">
+            <h3>Smart Memory Archive</h3>
+
+            <p>
+              Store ideas, reflections, journal entries, and notes inside
+              a searchable personal knowledge vault.
+            </p>
+          </article>
+
+          <article class="glass-card reveal tilt-card">
+            <h3>Mood & Reflection Tracking</h3>
+
+            <p>
+              Organize memories by mood and category to understand
+              personal patterns over time.
+            </p>
+          </article>
+
+          <article class="glass-card reveal tilt-card">
+            <h3>Fast Recall</h3>
+
+            <p>
+              Powerful search and filtering help surface the right note
+              instantly.
+            </p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+
+      <section
+        class="section section--experience"
+        id="experience"
+      >
+        <div class="experience-panel glass-panel reveal">
+
+          <div>
+            <p class="eyebrow">Experience</p>
+
+            <h2>
+              A personal dashboard for your thoughts
+            </h2>
+          </div>
+
+          <div class="stat-strip">
+
+            <div class="stat-chip">
+              <strong>128</strong>
+              <span>Memories Archived</span>
+            </div>
+
+            <div class="stat-chip">
+              <strong>21 Days</strong>
+              <span>Reflection Streak</span>
+            </div>
+
+            <div class="stat-chip">
+              <strong>Instant</strong>
+              <span>Search & Recall</span>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- PRICING -->
+
+      <section
+        class="section section--pricing"
+        id="pricing"
+      >
+
+        <div class="section-heading reveal">
+          <p class="eyebrow">Pricing</p>
+
+          <h2>Choose your workspace</h2>
+        </div>
+
+        <div class="pricing-grid">
+
+          <article class="pricing-card glass-card reveal">
+
+            <p class="pricing-card__tier">
+              Starter
+            </p>
+
+            <h3>Free</h3>
+
+            <p>
+              For capturing ideas and building a daily note-taking habit.
+            </p>
+
+            <ul class="pricing-card__list">
+              <li>25 journal cards</li>
+              <li>Basic search</li>
+              <li>Theme customization</li>
+            </ul>
+
+            <a
+              class="button button--ghost"
+              href="dashboard.html"
+            >
+              Start Free
+            </a>
+
+          </article>
+
+          <article
+            class="pricing-card pricing-card--featured glass-card reveal"
+          >
+
+            <span class="pricing-card__badge">
+              Most Popular
+            </span>
+
+            <p class="pricing-card__tier">
+              Personal
+            </p>
+
+            <h3>$12<span>/mo</span></h3>
+
+            <p>
+              Advanced organization tools for creators and productivity enthusiasts.
+            </p>
+
+            <ul class="pricing-card__list">
+              <li>Unlimited entries</li>
+              <li>Advanced search</li>
+              <li>Command palette</li>
+            </ul>
+
+            <a class="button" href="dashboard.html">
+              Upgrade
+            </a>
+
+          </article>
+
+          <article class="pricing-card glass-card reveal">
+
+            <p class="pricing-card__tier">
+              Creator
+            </p>
+
+            <h3>$24<span>/mo</span></h3>
+
+            <p>
+              Premium workspace with insights, analytics, and advanced workflows.
+            </p>
+
+            <ul class="pricing-card__list">
+              <li>Insight dashboard</li>
+              <li>AI-inspired prompts</li>
+              <li>Priority themes</li>
+            </ul>
+
+            <a
+              class="button button--ghost"
+              href="dashboard.html"
+            >
+              Go Creator
+            </a>
+
+          </article>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="footer glass-panel reveal">
+      <div>
+        <p class="eyebrow">
+          Neon Journal
+        </p>
+
+        <h2>
+          Capture. Reflect. Remember.
+        </h2>
+      </div>
+
+      <a class="button" href="dashboard.html">
+        Open Dashboard
+      </a>
+    </footer>
+
+    <!-- DOCK -->
+
+    <nav class="dock glass-panel">
+      <a href="#hero" class="dock__item active">Home</a>
+      <a href="#features" class="dock__item">Features</a>
+      <a href="#pricing" class="dock__item">Pricing</a>
+      <a href="dashboard.html" class="dock__item">Dashboard</a>
+    </nav>
+  </div>
+
+  <script src="assets/js/landing.js"></script>
+</body>
+</html>

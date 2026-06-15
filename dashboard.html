@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Journal | Personal Knowledge Hub</title>
+  <meta name="description" content="A futuristic personal knowledge dashboard for notes, ideas, reflections, goals, and memory management.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="theme-dark dashboard-page">
+  <div class="loader" id="pageLoader" aria-hidden="true">
+    <div class="loader__core"></div>
+    <p class="loader__text">Syncing knowledge vault...</p>
+  </div>
+
+  <div class="page-shell dashboard-shell">
+    <div class="particles" id="particles"></div>
+    <div class="ambient ambient--left"></div>
+    <div class="ambient ambient--right"></div>
+
+    <!-- Expandable dashboard sidebar -->
+    <aside class="sidebar glass-panel" id="sidebar">
+      <div class="sidebar__header">
+        <a class="brand" href="index.html">
+          <span class="brand__mark"></span>
+          <span class="brand__text">Neon Journal</span>
+        </a>
+        <button class="icon-button" type="button" id="sidebarToggle" aria-label="Toggle sidebar">
+          <span class="icon-button__bars"></span>
+        </button>
+      </div>
+
+      <div class="sidebar__section">
+        <p class="sidebar__label">Navigation</p>
+        <a class="sidebar__link active" href="#dashboardTop">Overview</a>
+        <a class="sidebar__link" href="#notesSection">Journal Grid</a>
+        <a class="sidebar__link" href="#analyticsSection">Analytics</a>
+      </div>
+
+      <div class="sidebar__section">
+        <p class="sidebar__label">Mood Filters</p>
+        <div class="mood-pills">
+          <button class="pill-button" type="button">Calm</button>
+          <button class="pill-button" type="button">Focused</button>
+          <button class="pill-button" type="button">Electric</button>
+        </div>
+      </div>
+
+      <div class="sidebar__section sidebar__section--grow">
+        <p class="sidebar__label">Recent Insights</p>
+        <div class="mini-feed">
+          <article class="mini-feed__item">
+            <span class="mini-feed__dot"></span>
+            <div>
+              <strong>Weekly review reminder </strong>
+              <p>Review your long-term planning notes.</p>
+            </div>
+          </article>
+          <article class="mini-feed__item">
+            <span class="mini-feed__dot"></span>
+            <div>
+              <strong>Knowledge insight</strong>
+              <p>Most notes are created between 9 PM and 11 PM.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </aside>
+
+    <main class="dashboard-main" id="dashboardTop">
+      <header class="dashboard-topbar glass-panel">
+        <div>
+          <p class="eyebrow">Dashboard</p>
+          <h1>Personal Knowledge Hub</h1>
+          <p class="typing-line">
+            <span class="typing-line__label">Live prompt:</span>
+            <span class="typing-line__text" id="dashboardTyping"></span>
+          </p>
+        </div>
+
+        <div class="dashboard-topbar__actions">
+          <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">
+            <span class="theme-toggle__orb"></span>
+          </button>
+          <button class="button button--ghost" type="button" id="notifyButton">Trigger Alert</button>
+          <button class="button" type="button" id="openPaletteButton">Command Menu</button>
+        </div>
+      </header>
+
+      <section class="analytics-grid" id="analyticsSection">
+        <article class="glass-card analytics-card">
+          <p>Total Entries</p>
+          <h3>128</h3>
+          <span class="trend trend--up">+14 added this week</span>
+        </article>
+        <article class="glass-card analytics-card">
+          <p>Neon Streak</p>
+          <h3>21 days</h3>
+          <span class="trend trend--up">21 days of continuous journaling</span>
+        </article>
+        <article class="glass-card analytics-card">
+          <p>Night Capture</p>
+          <h3>78%</h3>
+          <span class="trend">Organized and categorized entries</span>
+        </article>
+      </section>
+
+      <section class="control-bar glass-panel">
+        <label class="search-field" for="searchInput">
+          <span>Search notes</span>
+          <input id="searchInput" type="search" placeholder="Search by title, mood, or tag...">
+        </label>
+        <div class="filter-group" id="filterGroup">
+          <button class="filter-button active" type="button" data-filter="all">All</button>
+          <button class="filter-button" type="button" data-filter="memory">Memories</button>
+          <button class="filter-button" type="button" data-filter="idea">Ideas</button>
+          <button class="filter-button" type="button" data-filter="reflection">Reflections</button>
+        </div>
+      </section>
+
+      <!-- Journal card grid powered by dummy data -->
+      <section class="notes-section" id="notesSection">
+        <div class="notes-section__header">
+          <div>
+            <p class="eyebrow">Journal Grid</p>
+            <h2>Floating note cards</h2>
+          </div>
+          <button class="button button--ghost pulse-button" type="button">New Note</button>
+        </div>
+
+        <div class="notes-grid" id="notesGrid"></div>
+
+        <div class="empty-state glass-card hidden" id="emptyState">
+          <div class="empty-state__icon"></div>
+          <h3>No notes match this signal</h3>
+          <p>Try a different filter or search term to surface more glowing entries.</p>
+        </div>
+      </section>
+    </main>
+
+    <div class="notifications" id="notifications"></div>
+
+    <!-- Keyboard-driven quick actions -->
+    <div class="command-palette hidden" id="commandPalette" aria-hidden="true">
+      <div class="command-palette__backdrop" data-close-palette></div>
+      <div class="command-palette__panel glass-panel">
+        <div class="command-palette__header">
+          <h2>Command Palette</h2>
+          <span>Ctrl + K</span>
+        </div>
+        <input id="commandInput" type="text" placeholder="Type a command...">
+        <div class="command-list">
+          <button class="command-item" type="button" data-command="theme">Toggle Theme</button>
+          <button class="command-item" type="button" data-command="notify">Show Notification</button>
+          <button class="command-item" type="button" data-command="focus">Focus Reflections Notes</button>
+          <button class="command-item" type="button" data-command="clear">Clear Search</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detail modal for an individual note -->
+    <div class="note-modal hidden" id="noteModal" aria-hidden="true">
+      <div class="note-modal__backdrop" data-close-modal></div>
+      <article class="note-modal__panel glass-panel">
+        <button class="icon-button note-modal__close" type="button" data-close-modal aria-label="Close note">
+          <span class="note-modal__close-icon"></span>
+        </button>
+        <p class="note-modal__eyebrow" id="modalCategory"></p>
+        <h2 id="modalTitle"></h2>
+        <div class="note-meta">
+          <span id="modalMood"></span>
+          <span id="modalDate"></span>
+        </div>
+        <p id="modalBody"></p>
+      </article>
+    </div>
+
+    <nav class="dock glass-panel">
+      <a href="index.html" class="dock__item">Home</a>
+      <a href="#analyticsSection" class="dock__item">Insights</a>
+      <a href="#notesSection" class="dock__item active">Notes</a>
+      <button class="dock__item dock__item--button" type="button" id="dockPaletteButton">Ctrl+K</button>
+    </nav>
+  </div>
+
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
