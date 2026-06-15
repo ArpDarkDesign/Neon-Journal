@@ -25,7 +25,11 @@
   --container: min(1180px, calc(100vw - 2rem));
   color-scheme: dark;
 }
-
+.brand__logo{
+  width:28px;
+  height:28px;
+  display:block;
+}
 /* body.theme-light {
   --bg: #edf3ff;
  --bg: #f5f8ff;

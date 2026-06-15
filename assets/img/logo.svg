@@ -1,0 +1,25 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="neonGradient" x1="0" y1="0" x2="256" y2="256">
+      <stop offset="0%" stop-color="#8B5CF6"></stop>
+      <stop offset="100%" stop-color="#38BDF8"></stop>
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="coloredBlur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <circle cx="128" cy="128" r="88" stroke="url(#neonGradient)" stroke-width="6" opacity="0.6"></circle>
+
+  <circle cx="128" cy="40" r="10" fill="url(#neonGradient)" filter="url(#glow)"></circle>
+  <circle cx="216" cy="128" r="10" fill="url(#neonGradient)" filter="url(#glow)"></circle>
+  <circle cx="128" cy="216" r="10" fill="url(#neonGradient)" filter="url(#glow)"></circle>
+  <circle cx="40" cy="128" r="10" fill="url(#neonGradient)" filter="url(#glow)"></circle>
+
+  <path d="M90 180V76L166 180V76" stroke="url(#neonGradient)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"></path>
+</svg>
